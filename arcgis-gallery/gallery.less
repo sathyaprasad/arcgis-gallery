@@ -1,0 +1,72 @@
+@import "theme";
+
+h1, h2, h3,  h4, h5, h6, p, a, input {
+	.font-styles;
+}
+
+a {
+	.power-button;
+}
+
+#page {
+	background: @light-gray;
+	margin: auto;
+	max-width: 1100px;
+	padding: 20px;
+
+	#title {
+		.widget;
+		
+		>* {
+			display: inline-block;
+		}
+
+		h1 {
+			margin: 0px;
+		}
+
+		#menu-bar {
+			float: right;
+			margin-top: 23px;
+		}
+	}
+
+	#search {
+		.widget;
+		margin: 20px 0px;
+
+		#search-bar {
+			display:inline;
+			margin-right: 50px;
+
+			input {
+				width: 350px;
+			}
+
+			#settings {			
+				.calm-button;
+			}
+		}
+
+		#button-bar {
+			display: none;
+
+			> a {
+				background: none;
+				color: @power-orange-font;
+				margin-left: 8px;
+			}
+
+			> a.selected {
+				background: @power-orange;
+				color: @white-font;
+			}
+		}
+	}
+
+	#content {
+		.widget;
+		min-height: 600px;
+		color: @calm-blue;
+	}	
+}
