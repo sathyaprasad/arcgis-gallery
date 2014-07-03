@@ -1,4 +1,7 @@
+@light-gray-background: #F1EEEE;
+@dark-gray-background: #363636;
 @white-background: #FAFAFA;
+@slate-background: #222222;
 @white-font: white;
 @power-orange: #E98D32;
 @power-orange-font: #E98D32;
@@ -6,10 +9,10 @@
 @purple: purple;
 @yellow: yellow;
 @green: green;
-@light-gray: #F1EEEE;
-
+@image-item-vintage-green: #58AD83;
+@image-item-gray-green: #328869;
 .widget {
-	background: @white-background;
+	background: @slate-background;
 	padding: 20px;
 }
 
@@ -37,7 +40,8 @@
 
 .font-styles {
 	font-family: 'Cabin', sans-serif;
-	font-weight: normal;	
+	font-weight: normal;
+	color: @white-font;	
 }
 
 html {
@@ -54,4 +58,8 @@ h3 {
 
 input, a {
 	font-size: 0.8rem;
+}
+
+h6 {
+	font-size: 0.5rem;
 }
