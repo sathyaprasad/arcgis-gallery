@@ -1,7 +1,9 @@
 @light-gray-background: #F1EEEE;
 @dark-gray-background: #363636;
 @white-background: #FAFAFA;
+@card-body-background: #EBEBEB;
 @slate-background: #222222;
+@slate-lighter-background: #3A3A3A;
 @white-font: white;
 @power-orange: #E98D32;
 @power-orange-font: #E98D32;
@@ -11,14 +13,10 @@
 @green: green;
 @image-item-vintage-green: #58AD83;
 @image-item-gray-green: #328869;
-.widget {
-	background: @slate-background;
-	padding: 20px;
-}
+@separator-color: #BBB;
 
-/*
-#2D8FEB
-*/
+@widget-spacing: 20px;
+@card-padding: 7px;
 
 .button {
 	border-radius: 5px;
@@ -33,13 +31,27 @@
 	background: @power-orange;
 }
 
+.selected-button {
+	background: @power-orange;
+	color: @white-font;
+}
+
+.unselected-button {
+	background: none;
+	color: @power-orange-font;
+}
+
 .calm-button {
 	.button;
 	background: @calm-blue;
 }
 
+.popover {
+	box-shadow: 1px 1px 12px 0px #000;	
+	background: #222;
+}
+
 .font-styles {
-	font-family: 'Cabin', sans-serif;
 	font-weight: normal;
 	color: @white-font;	
 }

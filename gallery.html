@@ -1,0 +1,135 @@
+<html>
+	<title>Gallery</title>
+	<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="theme.css">
+	<link rel="stylesheet" type="text/css" href="gallery.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="masonry.pkgd.js"></script>
+	<script type="text/javascript" src="backend.js"></script>
+	<script type="text/javascript" src="gallery.js"></script>
+<head>
+</head>
+<body>
+	<div id="page">
+		<div id="search">
+			<h1>Gallery</h1>
+			<div id="search-bar">
+				<h3>Search</h3>
+				<input class="searchinput" type="search" placeholder="What are you interested in?"/>
+				<div id="advanced-search">
+					<h3>More Options</h3>
+					<div class="advanced-row" id="advanced-author">
+						<h4>Author</h4>
+						<input type="text">
+					</div>
+					<div class="advanced-row" id="advanced-rating">
+						<h4>Rating</h4>
+						<a href="#">5</a>
+						<a href="#">4</a>
+						<a href="#">3</a>
+						<a href="#">2</a>
+						<a href="#">1</a>
+						<a href="#">Not Rated</a>
+					</div>
+					<div class="advanced-row" id="advanced-type">
+						<h4>Type</h4>
+						<a href="#">Web Map</a>
+						<a href="#">Map Service</a>
+						<a href="#">Web Mapping App</a>
+						<a href="#">Feature Service</a>
+						<a href="#">Other</a>
+					</div>
+					<div class="advanced-row" id="advanced-date">
+						<h4>Date</h4>
+						<a href="#">This Month</a>
+						<a href="#">Last 6 Months</a>
+						<a href="#">This Year</a>
+						<a href="#">Last 5 Years</a>
+					</div>
+					<a href="#" class="action" id="advanced-search-action">Done</a>
+				</div>
+			</div>
+			<div id="sort-bar">
+				<a href="#" id="views">
+					<svg enable-background="new 0 0 96 96" height="96px" id="eye" version="1.1" viewBox="0 0 96 96" width="96px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M48,20c21.15,0,34.502,19.998,38.998,28C82.494,56.016,69.145,76,48,76C26.853,76,13.503,56.118,9.003,48.149  C13.5,40.101,26.853,20,48,20 M48,12C16,12,0,48.166,0,48.166S16,84,48,84s48-36,48-36S80,12,48,12L48,12z"/><path d="M48,40c4.411,0,8,3.589,8,8s-3.589,8-8,8s-8-3.589-8-8S43.589,40,48,40 M48,32c-8.836,0-16,7.164-16,16  c0,8.837,7.164,16,16,16c8.837,0,16-7.163,16-16C64,39.164,56.837,32,48,32L48,32z"/></svg>
+					<h4>Most Views</h4>
+				</a>
+				<a href="#" id="freshest">
+					<svg enable-background="new 0 0 96 96" height="96px" id="clock" version="1.1" viewBox="0 0 96 96" width="96px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M48,4C23.7,4,4,23.7,4,48c0,24.301,19.7,44,44,44c24.301,0,44-19.699,44-44C92,23.7,72.301,4,48,4z M48,84  c-19.882,0-36-16.118-36-36s16.118-36,36-36s36,16.118,36,36S67.882,84,48,84z"/><path d="M52,46.343V24c0-2.209-1.791-4-4-4s-4,1.791-4,4v24c0,0.009,0.003,0.018,0.003,0.027c0.001,0.253,0.026,0.506,0.076,0.755  c0.024,0.123,0.069,0.234,0.104,0.354c0.039,0.132,0.069,0.266,0.122,0.395c0.058,0.138,0.136,0.264,0.208,0.394  c0.054,0.1,0.097,0.2,0.16,0.295c0.147,0.221,0.314,0.428,0.501,0.613l11.311,11.312c1.562,1.562,4.097,1.562,5.658,0  c1.562-1.562,1.562-4.097,0-5.656L52,46.343z"/></svg>
+					<h4>Freshest</h4>
+				</a>
+				<a href="#" id="rating">
+					<svg enable-background="new 0 0 96 96" height="96px" id="star" version="1.1" viewBox="0 0 96 96" width="96px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M48,32.106l3.206,10.116L53.002,48h5.812h9.679l-7.592,5.081l-4.854,3.282l1.851,5.572l3.04,9.228l-8.21-6.029l-4.698-3.45  l-4.719,3.41l-8.232,5.954l3.018-9.109l1.869-5.642l-4.859-3.169L27.462,48h9.724h5.812l1.796-5.778L48,32.106 M48,6.718L37.186,40  H2.191l28.312,19.671L19.688,92.18L48,71.634l28.312,20.711L65.498,59.644L93.81,40H58.814L48,6.718L48,6.718z"/></svg>
+					<h4>Best Rating</h4>
+				</a>
+				<a href="#" id="alphabetic">
+					<span>A-Z</span>
+					<h4>Alphabetic</h4>
+				</a>
+			</div>
+			<a href="#" class="action" id="login">Login</a>
+		</div>
+		<a id="filter-toggle" href="#">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="96" viewBox="0 0 96 96">
+				<g>
+					<line stroke-width="1" x1="" y1="" x2="" y2="" stroke="#449FDB" opacity=""></line>
+				</g>
+				<path d="M48 0c-26.51 0-48 6.716-48 15v9l36 36v30c0 3.314 5.372 6 12 6s12-2.686 12-6v-30l36-36v-9c0-8.284-21.49-15-48-15zM8.848 13.015c2.245-1.28 5.398-2.496 9.12-3.514 8.245-2.257 18.91-3.5 30.032-3.5s21.787 1.243 30.032 3.5c3.721 1.019 6.875 2.234 9.12 3.514 1.481 0.844 2.28 1.559 2.653 1.985-0.372 0.427-1.172 1.141-2.653 1.985-2.245 1.28-5.398 2.496-9.12 3.514-8.245 2.257-18.91 3.5-30.032 3.5s-21.787-1.243-30.032-3.5c-3.721-1.019-6.875-2.234-9.12-3.514-1.481-0.845-2.28-1.559-2.653-1.985 0.373-0.427 1.172-1.141 2.653-1.985z" fill="#000000"></path>
+			</svg>
+			<h4>Filter</h4>
+		</a>
+		<div id="filter">
+			<div id="filter-title">
+				<a href="#" id="clear-filter">Clear</a>
+			</div>
+			<div class="filter-row" id="filter-author">
+				<h4>Author</h4>
+				<select id="authors-dropdown">
+					<option value="">Select</option>
+				</select>
+			</div>
+			<div class="filter-row" id="filter-custom">
+				<h4>Custom</h4>
+				<a href="#">By ESRI</a>
+				<a href="#">Top 5 Authors</a>
+				<a href="#">Most Popular</a>
+				<a href="#">Most Commented</a>
+			</div>
+			<div class="filter-row" id="filter-date">
+				<h4>Date</h4>
+				<a href="#">This Month</a>
+				<a href="#">Last 6 Months</a>
+				<a href="#">This Year</a>
+				<a href="#">Last 5 Years</a>
+			</div>
+			<div class="filter-row" id="filter-type">
+				<h4>Type</h4>
+				<a href="#">Web Map</a>
+				<a href="#">Map Service</a>
+				<a href="#">Web Mapping App</a>
+				<a href="#">Feature Service</a>
+				<a href="#">Other</a>
+			</div>
+			<div class="filter-row" id="filter-rating">
+				<h4>Rating</h4>
+				<a href="#">4 - 5</a>
+				<a href="#">3 - 4</a>
+			</div>
+		</div>
+		<div id="content">
+			<div id="content-empty">
+				<h3>
+					Hey! Looks like you're new.
+				</h3>
+				<h4>
+					Enter search terms above and play with the filters.
+				</h4>
+			</div>
+			<div id="content-items"></div>
+			<div id="content-searching">Searching...</div>
+			<!--<div id="more">More</div>-->
+		</div>
+		<div id="overlay"></div>
+	</div>
+</body>
+</html>
