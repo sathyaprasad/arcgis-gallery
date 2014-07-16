@@ -1,3 +1,1 @@
-Gallery:
-
-<a href="http://github.com/sathyaprasad/arcgis-gallery/gallery.html"></a>
+[Gallery](http://github.com/sathyaprasad/arcgis-gallery/gallery.html)
